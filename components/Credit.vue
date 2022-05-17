@@ -11,9 +11,9 @@ const options = {
 </script>
 
 <template>
-  <p class="text-xl">
+  <p class="text-xl dark:text-white">
     {{ currentTime.toLocaleDateString('id-ID', options) }} |
-    {{ currentTime.toLocaleTimeString('id-ID') }}
+    {{ currentTime.toLocaleTimeString('en-US', { hour12: false }) }}
   </p>
-  <p>&copy; {{ myName }} | Nuxt 3 + UnoCSS</p>
+  <p class="dark:text-white">&copy; {{ myName }} | Nuxt 3 + UnoCSS</p>
 </template>
