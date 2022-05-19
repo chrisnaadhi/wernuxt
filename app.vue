@@ -1,20 +1,22 @@
 <script setup>
-import { ref } from "vue";
 import "./assets/styles/style.css";
 
-useHead;
-
 const isDark = ref(false);
-const userName = ref("World");
+const userName = ref("Chrisna");
 const toggleDark = () => {
   isDark.value = !isDark.value;
   document.body.classList.toggle("dark");
 };
+
+useHead({
+  titleTemplate: "%s | WerNuxt3",
+  meta: [{ name: "description", content: "My Amazing Application" }],
+});
 </script>
 
 <template>
   <Head>
-    <Title>Hello {{ userName }}</Title>
+    <Title>Homepage {{ userName }}</Title>
     <Link
       rel="icon"
       href="https://nuxtjs.org/_nuxt/img/logo.d0868f5.svg"
@@ -30,29 +32,32 @@ const toggleDark = () => {
       </p>
 
       <img
-        v-if="!isDark"
+        v-if="isDark"
         class="logo"
-        src="https://avatars.githubusercontent.com/u/23360933"
+        src="https://avatars.githubusercontent.com/u/29566738"
         alt=""
       />
       <img
         v-else
         class="logo"
-        src="https://avatars.githubusercontent.com/u/29566738"
+        src="https://avatars.githubusercontent.com/u/23360933"
         alt=""
       />
-    </div>
-    <footer class="flex flex-col items-center justify-center">
-      <p class="mb-5">Toggle Theme :</p>
-      <div @click="toggleDark" class="dark-toggle">
-        <span v-if="!isDark">🌙</span>
-        <span v-else>☀️</span>
-      </div>
-      <Credit />
       <div>
         Change to your name :
-        <input type="text" v-model="userName" class="mt-5" />
+        <input type="text" v-model="userName" class="mb-5" />
       </div>
+    </div>
+    <footer class="flex flex-col items-center justify-center">
+      <div class="flex items-center">
+        <p class="mb-5 mx-2">Toggle Theme :</p>
+        <div @click="toggleDark" class="dark-toggle">
+          <span v-if="isDark">☀️</span>
+          <span v-else>🌙</span>
+        </div>
+      </div>
+
+      <Credit />
     </footer>
   </main>
 </template>
@@ -63,7 +68,7 @@ const toggleDark = () => {
 }
 
 .dark-toggle {
-  --at-apply: text-5xl mb-5 bg-green-500 pt-1 pb-3 rounded-xl cursor-pointer
+  --at-apply: text-3xl mb-5 bg-gray-500 rounded-xl pb-1.5 cursor-pointer
     border-none;
 }
 
