@@ -27,7 +27,7 @@ useHead({
     <div class="text-center">
       <!-- <NuxtWelcome /> -->
       <h1 class="nuxt-color text-4xl">
-        Hello, {{ userName === '' ? 'Guest' : userName }}!
+        Hello, {{ userName ? userName : 'Guest' }}!
       </h1>
       <p class="font-bold text-7xl text-gray-800 dark:text-white">
         Nuxt<span class="nuxt-color">3</span>
