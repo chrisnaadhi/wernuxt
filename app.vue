@@ -1,16 +1,16 @@
 <script setup>
-import "./assets/styles/style.css";
+import './assets/styles/style.css';
 
 const isDark = ref(false);
-const userName = ref("Chrisna");
+const userName = ref('Chrisna');
 const toggleDark = () => {
   isDark.value = !isDark.value;
-  document.body.classList.toggle("dark");
+  document.body.classList.toggle('dark');
 };
 
 useHead({
-  titleTemplate: "%s | WerNuxt3",
-  meta: [{ name: "description", content: "My Amazing Application" }],
+  titleTemplate: '%s | WerNuxt3',
+  meta: [{ name: 'description', content: 'My Amazing Application' }],
 });
 </script>
 
@@ -23,10 +23,12 @@ useHead({
       type="image/x-icon"
     />
   </Head>
-  <main class="h-screen py-5 dark:(bg-gray-800 text-white)">
+  <main class="main-layer">
     <div class="text-center">
       <!-- <NuxtWelcome /> -->
-      <h1 class="nuxt-color text-4xl">Hello, {{ userName }}</h1>
+      <h1 class="nuxt-color text-4xl">
+        Hello, {{ userName === '' ? 'Guest' : userName }}!
+      </h1>
       <p class="font-bold text-7xl text-gray-800 dark:text-white">
         Nuxt<span class="nuxt-color">3</span>
       </p>
@@ -63,6 +65,11 @@ useHead({
 </template>
 
 <style>
+.main-layer {
+  --at-apply: h-screen py-5 dark:(bg-gray-800 text-white);
+  transition: all .3s linear;
+}
+
 .nuxt-color {
   color: #00dc82;
 }
