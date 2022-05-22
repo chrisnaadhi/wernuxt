@@ -11,9 +11,21 @@ const options = {
 </script>
 
 <template>
-  <p class="text-xl dark:text-white">
-    {{ currentTime.toLocaleDateString('id-ID', options) }} |
-    {{ currentTime.toLocaleTimeString('en-US', { hour12: false }) }}
-  </p>
-  <p class="dark:text-white">&copy; {{ myName }} | Nuxt 3 + UnoCSS</p>
+  <div
+    class="
+      bg-green-400
+      w-full
+      flex flex-col
+      items-center
+      py-5
+      dark:(bg-green-700
+      text-white)
+    "
+  >
+    <p class="text-xl">
+      {{ currentTime.toLocaleDateString('id-ID', options) }} |
+      {{ currentTime.toLocaleTimeString('en-US', { hour12: false }) }}
+    </p>
+    <p class="font-italic">&copy; {{ myName }} | Nuxt 3 + UnoCSS</p>
+  </div>
 </template>

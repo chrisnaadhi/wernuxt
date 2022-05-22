@@ -24,6 +24,7 @@ useHead({
     />
   </Head>
   <main class="main-layer">
+    <Navbar />
     <div class="text-center">
       <!-- <NuxtWelcome /> -->
       <h1 class="nuxt-color text-4xl">
@@ -50,7 +51,12 @@ useHead({
         <input type="text" v-model="userName" class="mb-5" />
       </div>
     </div>
-    <footer class="flex flex-col items-center justify-center">
+    <div class="px-12 mb-8">
+      <h1 class="text-center">Description</h1>
+      <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum justo vitae quam vestibulum congue. In hac habitasse platea dictumst. Ut tincidunt eget nunc ac euismod. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus non augue volutpat, bibendum erat venenatis, tincidunt mi. Morbi gravida quam quam, non tincidunt ex efficitur a. Sed finibus interdum turpis, et maximus est ullamcorper non. Suspendisse potenti. Quisque ac convallis augue. Phasellus eros nisi, rutrum eu sapien ut, convallis porta velit. In hac habitasse platea dictumst. Proin ullamcorper purus in quam feugiat, eget tincidunt dui fermentum. Nullam nulla libero, gravida at mattis vel, ultrices sed tortor. Sed sit amet mattis nunc, et pharetra sem.
+      </p>
+    </div>
+    <div class="flex flex-col items-center justify-center">
       <div class="flex items-center">
         <p class="mb-5 mx-2">Toggle Theme :</p>
         <div @click="toggleDark" class="dark-toggle">
@@ -58,15 +64,14 @@ useHead({
           <span v-else>🌙</span>
         </div>
       </div>
-
-      <Credit />
-    </footer>
+    </div>
+    <Credit />
   </main>
 </template>
 
 <style>
 .main-layer {
-  --at-apply: h-screen py-5 dark:(bg-gray-800 text-white);
+  --at-apply: dark:(bg-gray-800 text-white);
   transition: all .3s linear;
 }
 
