@@ -9,5 +9,4 @@ export default defineNuxtConfig({
     uno: true,
     transformers: [transformerDirective(), transformerVariantGroup()],
   },
-  ssr: false,
 });
