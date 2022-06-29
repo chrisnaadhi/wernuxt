@@ -11,7 +11,7 @@ const options = {
 </script>
 
 <template>
-  <LazyClientOnly>
+  <ClientOnly>
     <div
       class="bg-green-400 w-full flex flex-col items-center py-5 dark:(bg-green-700 text-white)"
     >
@@ -21,5 +21,5 @@ const options = {
       </p>
       <p class="font-italic">&copy; {{ myName }} | Nuxt 3 + UnoCSS</p>
     </div>
-  </LazyClientOnly>
+  </ClientOnly>
 </template>
