@@ -21,4 +21,8 @@ li {
 a {
   --at-apply: decoration-none text-gray-800 hover:(underline text-white);
 }
+
+.router-link-active {
+  --at-apply: underline text-white;
+}
 </style>
