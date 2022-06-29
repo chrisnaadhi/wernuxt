@@ -8,7 +8,7 @@
       />
     </Head>
     <Navbar />
-    <div class="min-h-screen ma px-2">
+    <div class="min-h-3xl ma px-2">
       <slot> Heyo! </slot>
     </div>
 
