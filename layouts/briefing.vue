@@ -1,7 +1,7 @@
 <template>
   <main class="main-layer">
     <Navbar />
-    <div>
+    <div class="h-2xl ma">
       <slot> Heyo! </slot>
     </div>
 

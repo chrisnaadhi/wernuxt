@@ -2,10 +2,10 @@
 
 <template>
   <ul class="bar">
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/blogs">Blogs</a></li>
-    <li><a href="/contact">Contact</a></li>
+    <li><NuxtLink to="/">Home</NuxtLink></li>
+    <li><NuxtLink to="/about">About</NuxtLink></li>
+    <li><NuxtLink to="/blogs">Blogs</NuxtLink></li>
+    <li><NuxtLink to="/contact">Contact</NuxtLink></li>
   </ul>
 </template>
 
