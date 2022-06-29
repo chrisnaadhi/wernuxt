@@ -52,7 +52,7 @@ useHead({
             <input type="text" v-model="userName" class="mb-5" />
           </div>
         </div>
-        <div class="px-12 mb-8">
+        <div class="px-6 mb-8">
           <h1 class="text-center">Description</h1>
           <p class="text-justify">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
