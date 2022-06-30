@@ -20,9 +20,10 @@ if (!post) throwError("No Article Found");
           </h2>
           <hr class="w-full my-8 border-gray-300" />
           <p>{{ post.status }}</p>
-          <p class="text-base md:text-lg sm:px-4">
-            {{ post.content }}
-          </p>
+          <span
+            v-html="post.content"
+            class="text-base md:text-lg sm:px-4"
+          ></span>
         </div>
         <div class="flex align-items justify-center">
           <NuxtLink to="/blogs"><Button>Back to Blogs</Button></NuxtLink>
