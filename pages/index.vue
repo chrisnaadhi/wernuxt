@@ -1,23 +1,23 @@
 <script setup>
-import '../assets/styles/style.css';
+import "../assets/styles/style.css";
 
 const isDark = ref(false);
-const userName = ref('Chrisna');
+const userName = ref("Chrisna");
 const toggleDark = () => {
   isDark.value = !isDark.value;
-  document.body.classList.toggle('dark');
+  document.body.classList.toggle("dark");
 };
 
 useHead({
-  titleTemplate: '%s | WerNuxt3',
-  meta: [{ name: 'description', content: 'My Amazing Application' }],
+  titleTemplate: "%s | WerNuxt3",
+  meta: [{ name: "description", content: "My Amazing Application" }],
 });
 </script>
 
 <template>
   <main>
     <Head>
-      <Title>Homepage {{ userName ? userName : 'Guest' }}</Title>
+      <Title>Homepage {{ userName ? userName : "Guest" }}</Title>
       <Link
         rel="icon"
         href="https://nuxtjs.org/_nuxt/img/logo.d0868f5.svg"
@@ -29,7 +29,7 @@ useHead({
         <div class="text-center">
           <!-- <NuxtWelcome /> -->
           <h1 class="nuxt-color text-4xl pt-3">
-            Hello, {{ userName ? userName : 'Guest' }}!
+            Hello, {{ userName ? userName : "Guest" }}!
           </h1>
           <p class="font-bold text-7xl text-gray-800 dark:text-white">
             Nuxt<span class="nuxt-color">3</span>
@@ -38,14 +38,14 @@ useHead({
           <img
             v-if="isDark"
             class="logo"
-            src="https://avatars.githubusercontent.com/u/29566738"
-            alt=""
+            src="~/assets/images/29566738.png"
+            alt="Nuxt Dark"
           />
           <img
             v-else
             class="logo"
-            src="https://avatars.githubusercontent.com/u/23360933"
-            alt=""
+            src="~/assets/images/23360933.png"
+            alt="Nuxt White"
           />
           <div>
             Change to your name :

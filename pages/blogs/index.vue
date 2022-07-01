@@ -2,6 +2,15 @@
 const { getItems } = useDirectusItems();
 
 const posts = await getItems({ collection: "blogs" });
+const removeTag = (str) => {
+  if (str === null || str === "") return false;
+  else str = str.toString();
+
+  // Regular expression to identify HTML tags in
+  // the input string. Replacing the identified
+  // HTML tag with a null string.
+  return str.replace(/(<([^>]+)>)/gi, "");
+};
 </script>
 
 <template>
@@ -9,12 +18,13 @@ const posts = await getItems({ collection: "blogs" });
     <section class="main-back">
       <h1>Blogs</h1>
       <ul v-for="post in posts" class="my-5">
-        <NuxtLink :to="`/blogs/articles/${post.id}`"
-          ><li>
+        <NuxtLink :to="`/blogs/articles/${post.id}`">
+          <li>
             <h1>{{ post.title }}</h1>
-            <p>{{ post.content.slice(0, 25) }}</p>
-          </li></NuxtLink
-        >
+          </li>
+        </NuxtLink>
+        <!-- <span v-html="post.content.slice(0, 27) + '...'"></span> -->
+        <p>{{ removeTag(post.content.slice(0, 27)) + "..." }}</p>
       </ul>
       <NuxtLink to="/">
         <Button> Back to Home </Button>

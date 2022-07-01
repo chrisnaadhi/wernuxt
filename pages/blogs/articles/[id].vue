@@ -3,7 +3,14 @@ const { getItemById } = useDirectusItems();
 const route = useRoute();
 
 const post = await getItemById({ collection: "blogs", id: route.params.id });
-if (!post) throwError("No Article Found");
+const { data: userProfile } = await useFetch(
+  `https://gubs0ke4.directus.app/users/${post.user_created}`
+);
+if (post) {
+  console.log("ok");
+} else {
+  throwError("No Post found!");
+}
 </script>
 
 <template>
@@ -19,7 +26,10 @@ if (!post) throwError("No Article Found");
             {{ post.title }}
           </h2>
           <hr class="w-full my-8 border-gray-300" />
-          <p>{{ post.status }}</p>
+          <p>
+            {{ userProfile.data.first_name }} {{ userProfile.data.last_name }} |
+            {{ userProfile.data.email }}
+          </p>
           <span
             v-html="post.content"
             class="text-base md:text-lg sm:px-4"
