@@ -15,6 +15,7 @@ const options = {
     <div
       class="bg-green-400 w-full flex flex-col items-center py-5 dark:(bg-green-700 text-white)"
     >
+      <DarkMode />
       <p class="text-xl">
         {{ currentTime.toLocaleDateString("id-ID", options) }} |
         {{ currentTime.toLocaleTimeString("en-US", { hour12: false }) }}

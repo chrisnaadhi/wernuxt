@@ -1,6 +1,11 @@
+<script setup>
+const userName = nameState();
+</script>
+
 <template>
   <main class="main-layer">
     <Head>
+      <Title>{{ userName ? userName : "Guest" }}</Title>
       <Link
         rel="icon"
         href="https://nuxtjs.org/_nuxt/img/logo.d0868f5.svg"

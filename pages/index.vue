@@ -1,12 +1,8 @@
 <script setup>
 import "../assets/styles/style.css";
 
-const isDark = ref(false);
-const userName = ref("Chrisna");
-const toggleDark = () => {
-  isDark.value = !isDark.value;
-  document.body.classList.toggle("dark");
-};
+const isDark = darkModeState();
+const userName = nameState();
 
 useHead({
   titleTemplate: "%s | WerNuxt3",
@@ -17,7 +13,7 @@ useHead({
 <template>
   <main>
     <Head>
-      <Title>Homepage {{ userName ? userName : "Guest" }}</Title>
+      <Title>{{ userName ? userName : "Guest" }}</Title>
       <Link
         rel="icon"
         href="https://nuxtjs.org/_nuxt/img/logo.d0868f5.svg"
@@ -72,10 +68,7 @@ useHead({
         <div class="flex flex-col items-center justify-center">
           <div class="flex items-center">
             <p class="mb-5 mx-2">Toggle Theme :</p>
-            <div @click="toggleDark" class="dark-toggle">
-              <span v-if="isDark">☀️</span>
-              <span v-else>🌙</span>
-            </div>
+            <DarkMode />
           </div>
         </div>
       </div>
@@ -91,11 +84,6 @@ useHead({
 
 .nuxt-color {
   color: #00dc82;
-}
-
-.dark-toggle {
-  --at-apply: text-3xl mb-5 bg-gray-500 rounded-xl pb-1.5 cursor-pointer
-    border-none;
 }
 
 .logo {
