@@ -7,7 +7,11 @@ const userName = nameState();
     <section class="main-back">
       <h1>Contacts Us</h1>
       <p>We are here to help!</p>
-      <input type="text" v-model="userName" />
+      <input
+        type="text"
+        v-model="userName"
+        class="my-5 rounded-xl border p-2 dark:(text-dark bg-white)"
+      />
       <br />
       <NuxtLink to="/">
         <Button> Back to Home </Button>

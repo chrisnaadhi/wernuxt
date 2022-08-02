@@ -3,11 +3,11 @@ const { getItemById } = useDirectusItems();
 const route = useRoute();
 
 const post = await getItemById({ collection: "blogs", id: route.params.id });
-const { data: userProfile } = await useFetch(
+const { data: userProfile, refresh } = await useFetch(
   `https://gubs0ke4.directus.app/users/${post.user_created}`
 );
 if (post) {
-  console.log("ok");
+  refresh();
 } else {
   throwError("No Post found!");
 }
@@ -21,12 +21,12 @@ if (post) {
       >
         <div class="max-w-screen-xl sm:text-center sm:mx-auto">
           <h2
-            class="mb-4 font-sans text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none"
+            class="mb-4 font-sans text-3xl font-bold tracking-tight sm:( text-4xl leading-none )"
           >
             {{ post.title }}
           </h2>
           <hr class="w-full my-8 border-gray-300" />
-          <p>
+          <p class="pb-4 md:pb-0">
             {{ userProfile.data.first_name }} {{ userProfile.data.last_name }} |
             {{ userProfile.data.email }}
           </p>

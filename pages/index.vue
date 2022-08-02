@@ -45,7 +45,11 @@ useHead({
           />
           <div>
             Change to your name :
-            <input type="text" v-model="userName" class="mb-5" />
+            <input
+              type="text"
+              v-model="userName"
+              class="mb-5 rounded-xl border p-2 dark:(text-dark bg-white)"
+            />
           </div>
         </div>
         <div class="px-6 mb-8">
