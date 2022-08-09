@@ -1,8 +1,27 @@
 <script setup>
+const cookie = useCookie("mode");
 const isDark = darkModeState();
+
+if (!cookie.value) {
+  cookie.value = "light";
+}
+
+onBeforeMount(() => {
+  window.document.body.classList.add(cookie.value);
+});
+
 const toggleDark = () => {
-  isDark.value = !isDark.value;
-  document.body.classList.toggle("dark");
+  if (isDark.value === false) {
+    isDark.value = !isDark.value;
+    cookie.value = "dark";
+    window.document.body.classList.add("dark");
+    window.document.body.classList.remove("light");
+  } else {
+    cookie.value = "light";
+    isDark.value = !isDark.value;
+    window.document.body.classList.add("light");
+    window.document.body.classList.remove("dark");
+  }
 };
 </script>
 
