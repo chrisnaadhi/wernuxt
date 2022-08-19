@@ -1,24 +1,18 @@
 <script setup>
-const cookie = useCookie("mode");
 const isDark = darkModeState();
-
-if (!cookie.value) {
-  cookie.value = "light";
-}
+const cookie = useCookie("mode");
 
 onBeforeMount(() => {
   window.document.body.classList.add(cookie.value);
 });
 
 const toggleDark = () => {
-  if (isDark.value === false) {
-    isDark.value = !isDark.value;
+  if (cookie.value === "light") {
     cookie.value = "dark";
     window.document.body.classList.add("dark");
     window.document.body.classList.remove("light");
   } else {
     cookie.value = "light";
-    isDark.value = !isDark.value;
     window.document.body.classList.add("light");
     window.document.body.classList.remove("dark");
   }

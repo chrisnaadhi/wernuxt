@@ -1,7 +1,10 @@
-// const cookie = useCookie("mode");
-// if (!cookie.value) {
-//   cookie.value = "light";
-// }
+export const darkModeState = () =>
+  useState<string>("mode", () => {
+    const cookie = useCookie("mode");
+    if (!cookie.value) {
+      cookie.value = "light";
+    }
 
-export const darkModeState = () => useState<boolean>("mode", () => false);
+    return cookie.value;
+  });
 export const nameState = () => useState<string>("userName", () => "Chrisna");

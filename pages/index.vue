@@ -1,7 +1,7 @@
 <script setup>
 import "../assets/styles/style.css";
 
-const isDark = darkModeState();
+const darkMode = darkModeState();
 const userName = nameState();
 
 useHead({
@@ -32,7 +32,7 @@ useHead({
           </p>
 
           <img
-            v-if="isDark"
+            v-if="darkMode == 'dark'"
             class="logo"
             src="~/assets/images/29566738.png"
             alt="Nuxt Dark"
