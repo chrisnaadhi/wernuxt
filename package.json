@@ -7,10 +7,10 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@unocss/nuxt": "^0.45.1",
-    "@unocss/transformer-directives": "^0.45.1",
-    "@unocss/transformer-variant-group": "^0.45.1",
-    "nuxt": "3.0.0-rc.6"
+    "@unocss/nuxt": "^0.45.14",
+    "@unocss/transformer-directives": "^0.45.14",
+    "@unocss/transformer-variant-group": "^0.45.14",
+    "nuxt": "3.0.0-rc.9"
   },
   "dependencies": {
     "nuxt-directus": "^2.4.0"
