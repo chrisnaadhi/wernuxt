@@ -1,5 +1,5 @@
 <script setup>
-const isDark = darkModeState();
+const isDark = isDarkMode();
 const cookie = useCookie("mode");
 
 onBeforeMount(() => {
@@ -9,10 +9,12 @@ onBeforeMount(() => {
 const toggleDark = () => {
   if (cookie.value === "light") {
     cookie.value = "dark";
+    isDark.value = true;
     window.document.body.classList.add("dark");
     window.document.body.classList.remove("light");
   } else {
     cookie.value = "light";
+    isDark.value = false;
     window.document.body.classList.add("light");
     window.document.body.classList.remove("dark");
   }
@@ -20,7 +22,7 @@ const toggleDark = () => {
 </script>
 
 <template>
-  <div @click="toggleDark" class="dark-toggle">
+  <div @click="toggleDark()" class="dark-toggle">
     <span v-if="isDark">☀️</span>
     <span v-else>🌙</span>
   </div>

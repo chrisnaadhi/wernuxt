@@ -1,8 +1,26 @@
-<script setup>
+<script setup lang="ts">
 const { getItems } = useDirectusItems();
 
-const posts = await getItems({ collection: "blogs" });
-const removeTag = (str) => {
+interface Article {
+  id?: string | number;
+  title: string;
+  content: string;
+  status: string;
+}
+
+const posts = ref();
+// const posts = await getItems<Article>({ collection: "blogs" });
+const fetchArticles = async () => {
+  try {
+    var items = await getItems<Article>({
+      collection: "blogs",
+    });
+    posts.value = items;
+  } catch (err) {
+    console.log(err);
+  }
+};
+const removeTag = (str: string) => {
   if (str === null || str === "") return false;
   else str = str.toString();
 
@@ -11,6 +29,11 @@ const removeTag = (str) => {
   // HTML tag with a null string.
   return str.replace(/(<([^>]+)>)/gi, "");
 };
+
+onMounted(() => {
+  fetchArticles();
+  console.log(posts.value);
+});
 </script>
 
 <template>

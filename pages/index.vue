@@ -1,8 +1,8 @@
 <script setup>
 import "../assets/styles/style.css";
 
-const darkMode = darkModeState();
 const userName = nameState();
+const isDark = isDarkMode();
 
 useHead({
   titleTemplate: "%s | WerNuxt3",
@@ -32,7 +32,7 @@ useHead({
           </p>
 
           <img
-            v-if="darkMode == 'dark'"
+            v-if="isDark"
             class="logo"
             src="~/assets/images/29566738.png"
             alt="Nuxt Dark"
