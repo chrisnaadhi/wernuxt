@@ -1,5 +1,9 @@
 <script setup>
 const userName = nameState();
+useHead({
+  titleTemplate: "%s | WerNuxt3",
+  meta: [{ name: "description", content: "My Amazing Application" }],
+});
 </script>
 
 <template>

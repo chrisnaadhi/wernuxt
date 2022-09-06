@@ -1,5 +1,3 @@
-import { e } from "@unocss/core";
-
 export const darkModeState = () =>
   useState<string>("darkState", () => {
     const cookie = useCookie("mode");

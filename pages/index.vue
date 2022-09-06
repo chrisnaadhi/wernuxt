@@ -3,6 +3,15 @@ import "../assets/styles/style.css";
 
 const userName = nameState();
 const isDark = isDarkMode();
+const cookie = useCookie("mode", {
+  maxAge: 1000 * 60,
+});
+
+onBeforeMount(() => {
+  if (!cookie.value) {
+    cookie.value = "light";
+  }
+});
 
 useHead({
   titleTemplate: "%s | WerNuxt3",

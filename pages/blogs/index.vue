@@ -3,23 +3,12 @@ const { getItems } = useDirectusItems();
 
 interface Article {
   id?: string | number;
-  title: string;
-  content: string;
-  status: string;
+  title?: string | any;
+  content?: string;
+  status?: string;
 }
 
-const posts = ref();
-// const posts = await getItems<Article>({ collection: "blogs" });
-const fetchArticles = async () => {
-  try {
-    var items = await getItems<Article>({
-      collection: "blogs",
-    });
-    posts.value = items;
-  } catch (err) {
-    console.log(err);
-  }
-};
+const posts = await getItems<Article>({ collection: "blogs" });
 const removeTag = (str: string) => {
   if (str === null || str === "") return false;
   else str = str.toString();
@@ -29,20 +18,15 @@ const removeTag = (str: string) => {
   // HTML tag with a null string.
   return str.replace(/(<([^>]+)>)/gi, "");
 };
-
-onMounted(() => {
-  fetchArticles();
-  console.log(posts.value);
-});
 </script>
 
 <template>
   <NuxtLayout name="briefing">
-    <section class="main-back">
+    <section class="main-back ma">
       <h1>Blogs</h1>
       <ul v-for="post in posts" class="my-5">
         <NuxtLink :to="`/blogs/articles/${post.id}`">
-          <li>
+          <li class="list-none">
             <h1>{{ post.title }}</h1>
           </li>
         </NuxtLink>
@@ -56,8 +40,8 @@ onMounted(() => {
   </NuxtLayout>
 </template>
 
-<style>
+<style scoped>
 .main-back {
-  --at-apply: text-center py-5;
+  --at-apply: max-w-xl text-center py-5;
 }
 </style>

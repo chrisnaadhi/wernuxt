@@ -20,8 +20,8 @@
   </NuxtLayout>
 </template>
 
-<style>
+<style scoped>
 .main-back {
-  --at-apply: text-center py-5;
+  --at-apply: text-center max-w-2xl ma py-5;
 }
 </style>

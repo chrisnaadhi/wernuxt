@@ -7,6 +7,7 @@ const userName = nameState();
     <section class="main-back">
       <h1>Contacts Us</h1>
       <p>We are here to help!</p>
+      <label for="userName">Your Name: </label>
       <input
         type="text"
         v-model="userName"
@@ -20,8 +21,8 @@ const userName = nameState();
   </NuxtLayout>
 </template>
 
-<style>
+<style scoped>
 .main-back {
-  --at-apply: text-center py-5;
+  --at-apply: text-center min-w-xl ma py-5;
 }
 </style>

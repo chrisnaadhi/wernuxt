@@ -13,6 +13,6 @@
     "nuxt": "3.0.0-rc.9"
   },
   "dependencies": {
-    "nuxt-directus": "^3.0.0"
+    "nuxt-directus": "^3.0.3"
   }
 }
