@@ -31,7 +31,7 @@ useHead({
     </Head>
     <NuxtLayout name="briefing">
       <div>
-        <div class="text-center">
+        <div class="text-center max-w-xl ma">
           <!-- <NuxtWelcome /> -->
           <h1 class="nuxt-color text-4xl pt-3">
             Hello, {{ userName ? userName : "Guest" }}!

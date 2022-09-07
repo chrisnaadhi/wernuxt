@@ -1,5 +1,11 @@
+<script setup>
+defineProps({
+  buttontype: String,
+});
+</script>
+
 <template>
-  <button>
+  <button type="{{ buttontype }}">
     <slot />
   </button>
 </template>
