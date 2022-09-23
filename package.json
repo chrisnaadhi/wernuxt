@@ -10,7 +10,7 @@
     "@unocss/nuxt": "^0.45.14",
     "@unocss/transformer-directives": "^0.45.14",
     "@unocss/transformer-variant-group": "^0.45.14",
-    "nuxt": "3.0.0-rc.9"
+    "nuxt": "^3.0.0-rc.11"
   },
   "dependencies": {
     "nuxt-directus": "^3.0.3"
